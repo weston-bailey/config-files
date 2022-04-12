@@ -1,9 +1,14 @@
+# this is the big install script for linux
+
+# versions of stuff to install
 NODE_VER=16
 PYTHON_VER=3.7
 
+# github urls for creating access toekns and ssh keys
 GH_TOKEN_URL="https://github.com/settings/tokens/new"
 GH_SSH_URL="https://github.com/settings/ssh/new"
 
+# just waits for user input to proceed, so the user can read the output of the scirpt
 wait_to_continue () {
   echo "press any key to continue"
   read in
