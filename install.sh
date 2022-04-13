@@ -224,8 +224,11 @@ sudo apt install clang --install-suggests
 # chmod +x cpt.py
 # ./cpt.py --check-requirements && ./cpt.py --create-dev-env Debug --with-workdir=./cling-build/
 
-# valgrind
+# valgrind debugger
 sudo apt-get install valgrind
+
+# split linter
+sudo apt-get -y install splint
 
 # ## # ## #
 # Audio tools
