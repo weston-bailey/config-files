@@ -101,7 +101,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 sudo apt install gdebi
 wget -O hyper_3.0.2_amd64 https://releases.hyper.is/download/deb
 sudo gdebi hyper_3.0.2_amd64
+# delete the file that was installed
 rm -f hyper_3.0.2_amd64
+# get config file
+curl -fsSL https://raw.github.com/weston-bailey/config-files/main/hyper.js > ~/.hyper.js
 
 # install vim
 sudo apt install vim
