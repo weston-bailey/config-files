@@ -91,14 +91,21 @@ sudo apt install curl
 # install zhell
 sudo apt install zsh
 # set the login shell to be zsh
-# TODO: fix this 
-# sudo chsh -s /bin/zsh
+# TODO: fix this -- only works with hyper.js? fine.
+sudo chsh -s /bin/zsh
 
 # install oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+# install hyper.js
+sudo apt install gdebi
+wget -O hyper_3.0.2_amd64 https://releases.hyper.is/download/deb
+sudo gdebi hyper_3.0.2_amd64
+rm -f hyper_3.0.2_amd64
+
 # install vim
 sudo apt install vim
+
 # get vimrc
 curl -fsSL https://raw.github.com/weston-bailey/config-files/main/vimrc > ~/.vimrc
 
