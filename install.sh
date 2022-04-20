@@ -261,6 +261,21 @@ sudo apt install ubuntustudio-audio ubuntustudio-audio-plugins linux-lowlatency
 # ## # ## # ## # 
 # optional fun apps
 
+# signal
+wget -O- https://updates.signal.org/desktop/apt/keys.asc | sudo apt-key add -
+echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
+sudo apt update && sudo apt install signal-desktop
+
+# discord
+sudo apt update
+sudo apt install gdebi-core wget
+wget -O ~/discord.deb "https://discordapp.com/api/download?platform=linux&format=deb"
+sudo gdebi ~/discord.deb
+
+# spotify
+ curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo apt-key add - \necho "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+ sudo apt-get update && sudo apt-get install spotify-client
+
 # gzdoom
 wget -O- http://debian.drdteam.org/drdteam.gpg | sudo apt-key add -\nsudo apt-add-repository 'deb http://debian.drdteam.org/ stable multiverse'\nsudo apt update\nsudo apt install gzdoom
 # steam
