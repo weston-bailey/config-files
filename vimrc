@@ -1,8 +1,9 @@
 set number	
 set linebreak  
 set showbreak=+
-set textwidth=100	
+set textwidth=60	
 set showmatch	
+" visual bell flashes the screen
 " set visualbell
 set belloff=all
 syntax on
@@ -24,7 +25,10 @@ syntax on
 " slate.vim
 " torte.vim
 " zellner.vim
-colorscheme delek
+colorscheme elflord
+
+" stop newlines after comments from automatically being commented
+set formatoptions-=cro
 
 set hlsearch	
 set smartcase	
@@ -49,4 +53,29 @@ set ruler
 
 set undolevels=1000   
 set backspace=indent,eol,start
- 
+
+set noswapfile
+
+" Use ctrl-[hjkl] to select the active split!
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
+
+" Commenting blocks of code.
+" https://stackoverflow.com/questions/1676632/whats-a-quick-way-to-comment-uncomment-lines-in-vim
+" type ,cc to comment a line and ,cu to uncomment a line (works both in normal and visual mode).
+
+(I stole it from some website many years ago so I can't completely explain how it works anymore :). There is a comment where it is explained.)
+augroup commenting_blocks_of_code
+  autocmd!
+  autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
+  autocmd FileType sh,ruby,python   let b:comment_leader = '# '
+  autocmd FileType conf,fstab       let b:comment_leader = '# '
+  autocmd FileType tex              let b:comment_leader = '% '
+  autocmd FileType mail             let b:comment_leader = '> '
+  autocmd FileType vim              let b:comment_leader = '" '
+augroup END
+noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
+noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+
