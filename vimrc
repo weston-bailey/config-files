@@ -65,8 +65,6 @@ nmap <silent> <c-l> :wincmd l<CR>
 " Commenting blocks of code.
 " https://stackoverflow.com/questions/1676632/whats-a-quick-way-to-comment-uncomment-lines-in-vim
 " type ,cc to comment a line and ,cu to uncomment a line (works both in normal and visual mode).
-
-(I stole it from some website many years ago so I can't completely explain how it works anymore :). There is a comment where it is explained.)
 augroup commenting_blocks_of_code
   autocmd!
   autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
