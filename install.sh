@@ -38,7 +38,7 @@ git config --global push.default simple
 git config --global credential.helper cache
 git config --global color.ui true
 git config --global pull.rebase true
-git config --global core.editor "vim --wait"
+git config --global core.editor "vim"
 git config --global init.defaultBranch main
 
 # SSH and Token auth
@@ -114,6 +114,8 @@ curl -fsSL https://raw.github.com/weston-bailey/config-files/main/hyper.js > ~/.
 
 # install vim
 sudo apt install vim
+# vim package manager
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # get vimrc
 curl -fsSL https://raw.github.com/weston-bailey/config-files/main/vimrc > ~/.vimrc
