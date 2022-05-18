@@ -19,6 +19,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'sheerun/vim-polyglot'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 call vundle#end()            " required
@@ -64,11 +65,11 @@ set smartcase
 set ignorecase	
 set incsearch	
  
-set autoindent
-set shiftwidth=2
-set smartindent	
-set smarttab  
-set softtabstop=2	
+" set autoindent
+" set shiftwidth=2
+" set smartindent	
+" set smarttab  
+" set softtabstop=2	
  
 set ruler     
 
