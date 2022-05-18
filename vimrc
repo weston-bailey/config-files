@@ -1,11 +1,40 @@
+" STUFF FOR Vundle
+" https://github.com/VundleVim/Vundle.vim
+" installation of Vundle git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" PLUGINS
+
+Plugin 'pangloss/vim-javascript'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'git://git.wincent.com/command-t.git'
+Plugin 'tpope/vim-fugitive'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" BASIC CONFIG
+
 set number	
 set linebreak  
-set showbreak=+
-set textwidth=60	
+set showbreak=↦
+" set textwidth=60	
 set showmatch	
 " visual bell flashes the screen
 " set visualbell
 set belloff=all
+let python_highlight_all=1
 syntax on
 " all the pretty colors
 " blue.vim
@@ -35,15 +64,7 @@ set smartcase
 set ignorecase	
 set incsearch	
  
-set autoindent	
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
-    " Use filetype detection and file-based automatic indenting.
-    filetype plugin indent on
-
-    " Use actual tab chars in Makefiles.
-    autocmd FileType make set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
-endif
+set autoindent
 set shiftwidth=2
 set smartindent	
 set smarttab  
@@ -55,6 +76,25 @@ set undolevels=1000
 set backspace=indent,eol,start
 
 set noswapfile
+
+" FILE TYPE FORMATING
+
+if has("autocmd")
+    " Use filetype detection and file-based automatic indenting.
+    filetype plugin indent on
+
+    " Use actual tab chars in Makefiles.
+    autocmd FileType make set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
+    " js and fam
+    autocmd FileType javascript,html,css,javascriptreact,typescript,typescriptreact set tabstop=2 softtabstop=2 shiftwidth=2
+    " python
+    autocmd FileType python set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix encoding=utf-8
+endif
+
+" CUSTOM HOTKEYS
+
+" NERDTress Ctrl+n
+map <C-n> :NERDTreeToggle<CR>
 
 " Use ctrl-[hjkl] to select the active split!
 nmap <silent> <c-k> :wincmd k<CR>
