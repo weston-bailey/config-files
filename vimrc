@@ -1,4 +1,4 @@
-" STUFF FOR Vundle
+" Stuff for Vundle
 " https://github.com/VundleVim/Vundle.vim
 " installation of Vundle git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 set nocompatible              " be iMproved, required
@@ -21,7 +21,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -55,7 +56,8 @@ syntax on
 " slate.vim
 " torte.vim
 " zellner.vim
-colorscheme elflord
+set background=dark " only for PaperColor, can be light
+colorscheme 0_PaperColor
 
 " stop newlines after comments from automatically being commented
 set formatoptions-=cro
@@ -117,4 +119,3 @@ augroup commenting_blocks_of_code
 augroup END
 noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
 noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
-
