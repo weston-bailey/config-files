@@ -23,6 +23,12 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
+" https://vi.stackexchange.com/questions/18372/how-to-add-javascript-and-jsx-comments-in-the-same-js-file#18378
+" https://github.com/tpope/vim-commentary
+Plugin 'tpope/vim-commentary'
+Plugin 'mxw/vim-jsx'
+Plugin 'suy/vim-context-commentstring'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -30,7 +36,7 @@ filetype plugin indent on    " required
 
 set number	
 set linebreak  
-set showbreak=↦
+set showbreak=✴
 " set textwidth=60	
 set showmatch	
 " visual bell flashes the screen
@@ -108,14 +114,14 @@ nmap <silent> <c-l> :wincmd l<CR>
 " Commenting blocks of code.
 " https://stackoverflow.com/questions/1676632/whats-a-quick-way-to-comment-uncomment-lines-in-vim
 " type ,cc to comment a line and ,cu to uncomment a line (works both in normal and visual mode).
-augroup commenting_blocks_of_code
-  autocmd!
-  autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
-  autocmd FileType sh,ruby,python   let b:comment_leader = '# '
-  autocmd FileType conf,fstab       let b:comment_leader = '# '
-  autocmd FileType tex              let b:comment_leader = '% '
-  autocmd FileType mail             let b:comment_leader = '> '
-  autocmd FileType vim              let b:comment_leader = '" '
-augroup END
-noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
-noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+" augroup commenting_blocks_of_code
+"   autocmd!
+"   autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
+"   autocmd FileType sh,ruby,python   let b:comment_leader = '# '
+"   autocmd FileType conf,fstab       let b:comment_leader = '# '
+"   autocmd FileType tex              let b:comment_leader = '% '
+"   autocmd FileType mail             let b:comment_leader = '> '
+"   autocmd FileType vim              let b:comment_leader = '" '
+" augroup END
+" noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
+" noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
