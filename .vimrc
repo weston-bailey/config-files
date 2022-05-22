@@ -21,8 +21,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
+" Plugin 'vim-pandoc/vim-pandoc'
+" Plugin 'vim-pandoc/vim-pandoc-syntax'
 " https://vi.stackexchange.com/questions/18372/how-to-add-javascript-and-jsx-comments-in-the-same-js-file#18378
 " https://github.com/tpope/vim-commentary
 Plugin 'tpope/vim-commentary'
@@ -73,7 +73,7 @@ set smartcase
 set ignorecase	
 set incsearch	
  
-" set autoindent
+set autoindent
 " set shiftwidth=2
 " set smartindent	
 " set smarttab  
