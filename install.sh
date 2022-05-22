@@ -118,7 +118,7 @@ sudo apt install vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # get vimrc
-curl -fsSL https://raw.github.com/weston-bailey/config-files/main/vimrc > ~/.vimrc
+curl https://raw.githubusercontent.com/weston-bailey/dotfiles/main/.vimrc > ~/.vimrc
 
 # ## # ## # ##
 # Node
