@@ -28,13 +28,13 @@ Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 " https://vi.stackexchange.com/questions/18372/how-to-add-javascript-and-jsx-comments-in-the-same-js-file#18378
 " https://github.com/tpope/vim-commentary
 Plugin 'tpope/vim-commentary'
-" Plugin 'mxw/vim-jsx'
-Plugin 'suy/vim-context-commentstring'
+" Plugin 'suy/vim-context-commentstring' "for smart jsx comments is messing up auto indent
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 " BASIC CONFIG
+
 
 set number	
 set linebreak  
@@ -78,6 +78,8 @@ set ignorecase
 set incsearch	
  
 set autoindent
+set ai
+set si
 " set shiftwidth=2
 set smartindent	
 set smarttab  
