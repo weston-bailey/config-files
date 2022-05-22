@@ -110,7 +110,7 @@ sudo gdebi hyper_3.0.2_amd64
 # delete the file that was installed
 rm -f hyper_3.0.2_amd64
 # get config file
-curl -fsSL https://raw.github.com/weston-bailey/config-files/main/hyper.js > ~/.hyper.js
+curl -fsSL https://raw.github.com/weston-bailey/dotfiles/main/.hyper.js > ~/.hyper.js
 
 # install vim
 sudo apt install vim
