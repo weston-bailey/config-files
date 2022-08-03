@@ -18,7 +18,8 @@ Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'tpope/vim-fugitive'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
-Plugin 'vim-syntastic/syntastic'
+" syntax highlighting that is deprecated
+" Plugin 'vim-syntastic/syntastic'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 " Plugin 'vim-pandoc/vim-pandoc'
@@ -32,11 +33,14 @@ Plugin 'suy/vim-context-commentstring'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" plugin config
+let NERDShowHidden=1
+
 " BASIC CONFIG
 
 set number	
 set linebreak  
-set showbreak=✴
+set showbreak=≡
 " set textwidth=60	
 set showmatch	
 " visual bell flashes the screen
@@ -78,7 +82,13 @@ set autoindent
 set smartindent	
 set smarttab  
 " set softtabstop=2	
- 
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set noexpandtab
+
+
 set ruler     
 
 set undolevels=1000   
@@ -98,6 +108,8 @@ if has("autocmd")
     autocmd FileType javascript,html,css,javascriptreact,typescript,typescriptreact set tabstop=2 softtabstop=2 shiftwidth=2
     " python
     autocmd FileType python set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix encoding=utf-8
+    " clang
+    autocmd FileType *.c,*.h set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab colorcolumn=110 highlight ColorColumn ctermbg=darkgray
 endif
 
 " CUSTOM HOTKEYS
