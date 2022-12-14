@@ -17,7 +17,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'tpope/vim-fugitive'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'scrooloose/nerdtree'
+" alternative file browser
+" Plugin 'scrooloose/nerdtree'
 " syntax highlighting that is deprecated
 " Plugin 'vim-syntastic/syntastic'
 Plugin 'sheerun/vim-polyglot'
@@ -32,9 +33,6 @@ Plugin 'suy/vim-context-commentstring'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
-
-" plugin config
-let NERDShowHidden=1
 
 " BASIC CONFIG
 
@@ -66,8 +64,10 @@ syntax on
 " slate.vim
 " torte.vim
 " zellner.vim
-set background=dark " only for PaperColor, can be light
+" only for PaperColor, can be light
+set background=dark 
 colorscheme 0_PaperColor
+" colorscheme elflord
 
 " stop newlines after comments from automatically being commented
 set formatoptions-=cro
@@ -105,7 +105,7 @@ if has("autocmd")
     " Use actual tab chars in Makefiles.
     autocmd FileType make set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
     " js and fam
-    autocmd FileType javascript,html,css,javascriptreact,typescript,typescriptreact set tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd FileType javascript,html,css,javascriptreact,typescript,typescriptreact set tabstop=4 softtabstop=4 shiftwidth=4
     " python
     autocmd FileType python set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix encoding=utf-8
     " clang
