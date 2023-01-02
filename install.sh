@@ -288,7 +288,8 @@ sudo add-apt-repository ppa:feignint/dosbox-staging\nsudo apt-get update\nsudo a
 sudo apt install vlc
 # keyboard to joystick mapper
 sudo apt install qjoypad
-
+# retroarch emulator
+sudo add-apt-repository ppa:libretro/stable && sudo apt-get update && sudo apt-get install retroarch
 
 
 
